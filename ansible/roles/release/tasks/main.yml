@@ -10,6 +10,8 @@
     - "{{ install_dir }}"
 
 - name: Download the Jar
-  get_url:  url="{{ release_dist_url }}"
-            dest="{{ staging_dir }}/{{ release_dist_filename }}"
-            mode=0444
+  copy: src="{{ copy_dir }}" 
+	dest="{{ staging_dir }}/{{ release_dist_filename }}" 
+	owner=foo 
+	group=foo 
+	mode=0644

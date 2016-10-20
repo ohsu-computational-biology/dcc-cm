@@ -47,27 +47,6 @@
   roles:
     - postgres
 
-# Configure Postgres
-- name: Configure Postgres
-  hosts: id_server
-  gather_facts: no
-  become: yes
-  become_user: postgres
-  vars_files:
-    - "vars/main.yml"
-  roles:
-    - id_db
-
-# Id Server
-- name: Install ID Server
-  hosts: id_server
-  gather_facts: no
-  become: yes
-  vars_files:
-    - "vars/main.yml"
-  roles:
-    - id
-
 - name: Provision Mongodb server
   hosts: etl_server
   gather_facts: no
