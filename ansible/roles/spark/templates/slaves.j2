@@ -1,4 +1,4 @@
 # Copyright 2016(c) The Ontario Institute for Cancer Research. All rights reserved.
-{% for host in groups['hadoop_worker'] %}
+{% for host in groups['hadoop-worker'] %}
 {{ hostvars[host].ansible_default_ipv4.address }}
 {% endfor %}

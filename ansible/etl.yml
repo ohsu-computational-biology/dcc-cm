@@ -5,7 +5,7 @@
 
 
 # HDFS - Namenode
-- hosts: hadoop_master
+- hosts: hadoop-master
   become: yes
   vars_files:
     - "vars/main.yml"
@@ -13,7 +13,7 @@
     - { role: hdfs, hdfs_namenode: True }
 
 # HDFS - Datanode    
-- hosts: hadoop_worker
+- hosts: hadoop-worker
   become: yes
   vars_files:
   - "vars/main.yml"
@@ -22,7 +22,7 @@
 
 
 # Spark - Master
-- hosts: hadoop_master
+- hosts: hadoop-master
   become: yes
   vars_files:
     - "vars/main.yml"
@@ -30,7 +30,7 @@
     - { role: spark, master: True }
 
 # Spark - Slave    
-- hosts: hadoop_worker
+- hosts: hadoop-worker
   become: yes
   vars_files:
   - "vars/main.yml"
@@ -38,14 +38,14 @@
     - { role: spark, master : False }
 
 # Id Postgres Server
-- name: Provision download server with postgres
-  hosts: id_server
-  gather_facts: no
-  become: yes
-  vars_files:
-    - "vars/main.yml"
-  roles:
-    - postgres
+# - name: Provision download server with postgres
+#   hosts: id_server
+#   gather_facts: no
+#   become: yes
+#   vars_files:
+#     - "vars/main.yml"
+#   roles:
+#     - postgres
 
 - name: Provision Mongodb server
   hosts: etl_server
