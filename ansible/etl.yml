@@ -48,7 +48,7 @@
 #     - postgres
 
 - name: Provision Mongodb server
-  hosts: etl_server
+  hosts: etl
   gather_facts: no
   become: yes
   vars_files:
@@ -57,7 +57,7 @@
     - mongodb
 
 - name: Provision Import and Release
-  hosts: etl_server
+  hosts: etl
   gather_facts: no
   become: yes
   vars_files:

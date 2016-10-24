@@ -6,3 +6,6 @@ dcc-hadoop-master
 
 [hadoop-worker]
 dcc-hadoop-worker-1
+
+[etl]
+dcc-hadoop-master
