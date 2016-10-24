@@ -1,11 +1,11 @@
 # Copyright 2016(c) The Ontario Institute for Cancer Research. All rights reserved.
 
-- include: tasks/setup.yml group=hdfs-namenode:hdfs-datanode
+# - include: tasks/setup.yml group=hdfs-namenode:hdfs-datanode
 - include: tasks/setup-existing.yml group=hdfs-namenode:hdfs-datanode
 
 
 # HDFS - Namenode
-- hosts: hadoop_master
+- hosts: hadoop-master
   become: yes
   vars_files:
     - "vars/main.yml"
@@ -13,7 +13,7 @@
     - { role: hdfs, hdfs_namenode: True }
 
 # HDFS - Datanode    
-- hosts: hadoop_worker
+- hosts: hadoop-worker
   become: yes
   vars_files:
   - "vars/main.yml"
@@ -22,7 +22,7 @@
 
 
 # Spark - Master
-- hosts: hadoop_master
+- hosts: hadoop-master
   become: yes
   vars_files:
     - "vars/main.yml"
@@ -30,7 +30,7 @@
     - { role: spark, master: True }
 
 # Spark - Slave    
-- hosts: hadoop_worker
+- hosts: hadoop-worker
   become: yes
   vars_files:
   - "vars/main.yml"
