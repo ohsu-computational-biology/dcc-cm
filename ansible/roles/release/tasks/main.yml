@@ -11,7 +11,7 @@
 
 - name: Download the Jar
   copy: src="{{ copy_dir }}" 
-	dest="{{ staging_dir }}"/"{{ release_dist_filename }}" 
+	dest="{{ staging_dir }}/{{ release_dist_filename }}" 
 	owner=foo 
 	group=foo 
 	mode=0644
