@@ -5,7 +5,7 @@
         state=absent
 
 - name: Ensure directories
-  file: path={{ item }} state=directory
+  file: path="{{ item }}" state=directory
   with_items:
     - "{{ install_dir }}"
 
