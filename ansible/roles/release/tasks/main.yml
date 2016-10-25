@@ -10,4 +10,4 @@
     - "{{ install_dir }}"
 
 - name: Download the Jar
-  copy: src="{{ copy_dir }}/{{ release_dist_filename }}" dest="{{ staging_dir }}/{{ release_dist_filename }}" owner="{{ owner }}" group="{{ group }}" mode=0644
+  copy: src="{{ copy_dir }}/{{ release_dist_filename }}" dest="{{ etl_home }}/{{ release_dist_filename }}" owner="{{ owner }}" group="{{ group }}" mode=0644

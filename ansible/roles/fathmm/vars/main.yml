@@ -1,3 +1,6 @@
 dbname: fathmm
 dbuser: <fill in>
 dbpassword: <fill in>
+
+fathmm_dataset_url: https://artifacts.oicr.on.ca/artifactory/dcc-binaries/fathmm-db/2.3/fathmm.v2.3.postgres.tar.gz
+fathmm_dataset_name: fathmm.v2.3.postgres.tar.gz
