@@ -12,11 +12,11 @@
   roles:
     - postgresql
 
-- name: Prep Fathmm server
-  hosts: hadoop-master
-  become_user: postgres
-  gather_facts: no
-  vars_files:
-  - "vars/main.yml"
-  roles: 
-    - fathmm
+# - name: Prep Fathmm server
+#   hosts: hadoop-master
+#   become_user: postgres
+#   gather_facts: no
+#   vars_files:
+#   - "vars/main.yml"
+#   roles: 
+#     - fathmm
