@@ -1,17 +1,11 @@
-me: Install development header files
-  apt:  pkg={{ item }}
-        state=installed
-        update_cache=yes
-  with_items:
-    - python-software-properties
-    - libpq-dev
-    - python-pip
-    - python-psycopg2
+- name: ensure database is created
+  postgresql_db: name={{ dbname }}
 
-- name: Add repository key
-  apt_key: data="{{ lookup('file', 'ACCC4CF8.asc') }}"  
-           state=present
+- name: ensure user has access to database
+  postgresql_user: db={{ dbname }} name={{ dbuser }} password={{ dbpassword }} priv=ALL
 
-- name: Add PostgreSQL repository
-  apt_repository: repo="{{ postgresql_repo }}" 
-                  state=present
+# - name: ensure user does not have unnecessary privilege
+  postgresql_user: name={{dbuser}} role_attr_flags=NOSUPERUSER,NOCREATEDB
+
+# - name: ensure no other user can access the database
+  postgresql_privs: db={{dbname}} role=PUBLIC type=database priv=ALL state=absent

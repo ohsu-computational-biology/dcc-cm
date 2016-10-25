@@ -1,0 +1,22 @@
+# Copyright 2016(c) The Ontario Institute for Cancer Research. All rights reserved.
+
+# - include: tasks/setup.yml group=hdfs-namenode:hdfs-datanode:id-group:etl
+# - include: tasks/setup-existing.yml group=hadoop-master:hadoop-worker:etl
+
+- name: Start Fathmm Postgres server
+  hosts: hadoop-master
+  become: yes
+  gather_facts: no
+  vars_files:
+  - "vars/main.yml"
+  roles:
+    - postgresql
+
+- name: Prep Fathmm server
+  hosts: hadoop-master
+  become_user: postgres
+  gather_facts: no
+  vars_files:
+  - "vars/main.yml"
+  roles: 
+    - fathmm
