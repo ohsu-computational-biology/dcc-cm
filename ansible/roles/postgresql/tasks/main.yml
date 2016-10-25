@@ -7,3 +7,10 @@
     - postgresql
     - libpq-dev
     - python-psycopg2
+
+- name: Check if Fathmm dataset is already downloaded
+  command: test -e {{ etl_home }}/{{ fathmm_dataset_name }}
+  register: find_result
+
+- include: download_fathmm.yml
+  when: find_result != 0

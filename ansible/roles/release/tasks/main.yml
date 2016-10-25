@@ -9,5 +9,13 @@
   with_items:
     - "{{ install_dir }}"
 
-- name: Download the Jar
-  copy: src="{{ copy_dir }}/{{ release_dist_filename }}" dest="{{ etl_home }}/{{ release_dist_filename }}" owner="{{ owner }}" group="{{ group }}" mode=0644
+- name: Clone OHSU dcc-release-client for use
+  git: repo=https://github.com/ohsu-computational-biology/dcc-release.git 
+       dest="{ etl_home }/dcc-release"
+       version=ansible-dcc-release
+
+- name: Execute Maven to build the jar
+  command: mvn clean package -DskipTests -am -pl :dcc-release-client chdir="{ etl_home }/dcc-release/dcc-release-client"
+
+#- name: Download the Jar
+#  copy: src="{{ copy_dir }}/{{ release_dist_filename }}" dest="{{ etl_home }}/{{ release_dist_filename }}" owner="{{ owner }}" group="{{ group }}" mode=0644
