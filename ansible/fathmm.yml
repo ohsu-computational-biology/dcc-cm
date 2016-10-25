@@ -14,7 +14,9 @@
 
 # Prep Fathmm server
 - hosts: hadoop-master
-  become_user: postgres
+  sudo: yes
+  sudo_user: postgres
+#  become_user: postgres
   gather_facts: no
   vars_files:
   - "vars/main.yml"
