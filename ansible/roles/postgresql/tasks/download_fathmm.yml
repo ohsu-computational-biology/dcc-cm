@@ -3,3 +3,4 @@
   get_url: url="{{ fathmm_dataset_url }}"
            dest="{{ etl_home }}/{{ fathmm_dataset_name }}"
            mode=0444
+  sudo: yes
