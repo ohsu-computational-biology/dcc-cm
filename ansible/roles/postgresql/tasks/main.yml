@@ -15,19 +15,14 @@
 
 - name: Download Fathmm dataset
   get_url: url="{{ fathmm_dataset_url }}"
-           dest="{{ data_dir }}/{{ fathmm_dataset_name }}"
+           dest="{{ data_dir }}/{{ fathmm_dataset_tar }}"
            mode=0444
   become: yes
 
-- name: Extract the dataset
-  unarchive: src="{{ data_dir }}/{{ fathmm_dataset_name }}"
-             dest="{{ data_dir }}"
-             copy=no
+- name: Check if Fathmm dataset is already extracted
+  command: test -e {{ etl_home }}/{{ fathmm_dataset }}
+  register: find_result
+  ignore_errors: yes
 
-#- name: Check if Fathmm dataset is already downloaded
-#  command: test -e {{ etl_home }}/{{ fathmm_dataset_name }}
-#  register: find_result
-#  ignore_errors: yes
-#
-#- include: download_fathmm.yml
-#  when: find_result != 0
+- include: extract_fathmm.yml
+  when: find_result != 0

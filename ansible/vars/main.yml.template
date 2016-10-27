@@ -22,7 +22,8 @@ ansible_ssh_private_key_file: <ssh_key_file>
 # Fathmm Settings
 fathmm_dbuser: <fill in>
 fathmm_dbpassword: <fill in>
-fathmm_dataset_name: fathmm.v2.3.postgres.tar.gz
+fathmm_dataset: fathmm.v2.3.postgres
+fathmm_dataset_tar: {{ fathmm_dataset }}.tar.gz
 
 # Copying Setting
 copy_dir: <fill in>

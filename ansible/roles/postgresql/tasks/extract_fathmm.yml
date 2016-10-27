@@ -1,0 +1,5 @@
+
+- name: Extract the dataset
+  unarchive: src="{{ data_dir }}/{{ fathmm_dataset_tar }}"
+             dest="{{ data_dir }}"
+             copy=no
