@@ -34,7 +34,7 @@
   template: src="ohsu-settings.yml" dest="{{ portal_conf }}/application.yml" mode=644 force=yes
 
 - name: Fix wrapper configuration
-  lineinfile: dest="{{ portal_conf }}/wrapper.conf" regexp="^wrapper.app.parameter.2=" line=wrapper.app.parameter.2=--spring.profiles.active=ohsu-dev"
+  lineinfile: dest="{{ portal_conf }}/wrapper.conf" regexp="^wrapper.app.parameter.2=" line="wrapper.app.parameter.2=--spring.profiles.active=ohsu-dev"
 
 - name: Copy over portal h2 schema file
   template: src="schema.sql" dest="{{ portal_conf }}/schema.sql" mode=644 force=yes
