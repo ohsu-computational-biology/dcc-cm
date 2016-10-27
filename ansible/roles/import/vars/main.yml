@@ -5,7 +5,7 @@ import_name: dcc-import-client
 import_home: "{{ install_dir }}/{{ import_name }}"
 import_conf: "{{ import_home }}/conf"
 
-import_dist_version: 4.2.2
+import_dist_version: 4.2.1
 
 import_dist_name: dcc-import-client
 import_dist_fullname: "{{ import_dist_name }}-{{ import_dist_version }}"
