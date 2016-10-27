@@ -19,15 +19,19 @@
 - name: Ensure daemon is running
   service: name=mongod state=started
 
+- name: Create the directory
+  file: path="{{ data_dir }}" state=directory mode=0755
+
 - name: Copy projects.json file
   copy: src="{{ copy_dir }}/{{ projects_file_name }}" 
         dest="{{ data_dir }}/{{projects_file_name }}" 
         owner="{{ owner }}" 
         group="{{ group }}" 
         mode=0644
+  sudo: yes
 
 - name: Create Project collections
   shell: mongo dcc-import --eval "db.createCollection('Project')"
 
 - name: Load projects.json into Project collection
-  command: mongoimport --db dcc-import --collection Project --file {{ data_dir }}
+  command: mongoimport --db dcc-import --collection Project --jsonArray --file {{ data_dir }}/{{ projects_file_name }}
