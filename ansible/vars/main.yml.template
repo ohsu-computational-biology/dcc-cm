@@ -30,3 +30,6 @@ group: <fill in>
 
 # Mongo Project Collection Settings 
 projects_file_name: <fill in>
+
+# Import application.yml Settings
+application_file_name: <fill in>
