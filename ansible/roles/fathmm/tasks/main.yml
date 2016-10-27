@@ -2,7 +2,7 @@
   postgresql_db: name={{ fathmm_dbname }}
 
 - name: Ensure user has access to database
-  postgresql_user: db={{ fatmm_dbname }} name={{ fathmm_dbuser }} password={{ fathmm_dbpassword }} priv=ALL
+  postgresql_user: db={{ fathmm_dbname }} name={{ fathmm_dbuser }} password={{ fathmm_dbpassword }} priv=ALL
 
 - name: Upload dataset to postgres
   command: psql fathmm < {{ etl_home }}/{{ fathmm_dataset_name }}
