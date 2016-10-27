@@ -51,7 +51,7 @@
 #    - portal_db
 
 - name: Provision Portal
-  hosts: portal_main
+  hosts: portal-main
   gather_facts: no
   sudo: yes
   vars_files:
