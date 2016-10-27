@@ -17,7 +17,12 @@
   get_url: url="{{ fathmm_dataset_url }}"
            dest="{{ data_dir }}/{{ fathmm_dataset_name }}"
            mode=0444
-  sudo: yes
+  become: yes
+
+- name: Extract the dataset
+  unarchive: src="{{ data_dir }}/{{ fathmm_dataset_name }}"
+             dest="{{ data_dir }}"
+             copy=no
 
 #- name: Check if Fathmm dataset is already downloaded
 #  command: test -e {{ etl_home }}/{{ fathmm_dataset_name }}
