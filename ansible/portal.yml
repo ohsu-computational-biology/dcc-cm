@@ -1,54 +1,54 @@
 # Copyright 2014(c) The Ontario Institute for Cancer Research. All rights reserved.
 
-- include: tasks/setup.yml group=portal
+#- include: tasks/setup.yml group=portal
 # Ensures hosts files are written correctly. 
-- include: tasks/setup-existing.yml group=portal
+#- include: tasks/setup-existing.yml group=portal
 
-- name: Provision varnish
-  hosts: varnish
-  gather_facts: no
-  sudo: yes
-  vars_files:
-    - "vars/main.yml"
-  roles:
-    - varnish
+#- name: Provision varnish
+#  hosts: varnish
+#  gather_facts: no
+#  sudo: yes
+#  vars_files:
+#    - "vars/main.yml"
+#  roles:
+#    - varnish
 
-- name: Provision nginx
-  hosts: nginx
-  gather_facts: no
-  sudo: yes
-  vars_files:
-    - "vars/main.yml"
-  roles:
-    - nginx
+#- name: Provision nginx
+#  hosts: nginx
+#  gather_facts: no
+#  sudo: yes
+#  vars_files:
+#    - "vars/main.yml"
+#  roles:
+#    - nginx
 
-- name: Provision Elasticsearch
-  hosts: elasticsearch
-  gather_facts: no
-  sudo: yes
-  vars_files:
-    - "vars/main.yml"
-  roles: 
-    - elasticsearch
+#- name: Provision Elasticsearch
+#  hosts: elasticsearch
+#  gather_facts: no
+#  sudo: yes
+#  vars_files:
+#    - "vars/main.yml"
+#  roles: 
+#    - elasticsearch
 
-- name: Provision Postgres
-  hosts: postgres
-  gather_facts: no
-  sudo: yes
-  vars_files:
-    - "vars/main.yml"
-  roles: 
-    - postgres
+#- name: Provision Postgres
+#  hosts: postgres
+#  gather_facts: no
+#  sudo: yes
+#  vars_files:
+#    - "vars/main.yml"
+#  roles: 
+#    - postgres
 
-- name: Configure Postgres
-  hosts: postgres
-  gather_facts: no
-  sudo_user: postgres
-  sudo: yes
-  vars_files:
-    - "vars/main.yml"
-  roles: 
-    - portal_db
+#- name: Configure Postgres
+#  hosts: postgres
+#  gather_facts: no
+#  sudo_user: postgres
+#  sudo: yes
+#  vars_files:
+#    - "vars/main.yml"
+#  roles: 
+#    - portal_db
 
 - name: Provision Portal
   hosts: portal_main

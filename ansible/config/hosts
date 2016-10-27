@@ -9,3 +9,6 @@ dcc-hadoop-worker-1
 
 [etl]
 dcc-hadoop-master
+
+[portal-main]
+dcc-portal-test
