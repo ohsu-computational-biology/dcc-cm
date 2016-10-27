@@ -6,3 +6,4 @@
 
 - name: Upload dataset to postgres
   command: psql fathmm < {{ etl_home }}/{{ fathmm_dataset_name }}
+  become: yes
