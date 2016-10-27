@@ -18,3 +18,15 @@ host_key_checking: False
 openstack_ssh_user: ubuntu
 ansible_ssh_user: ubuntu
 ansible_ssh_private_key_file: <ssh_key_file>
+
+# Fathmm Settings
+fathmm_dbuser: <fill in>
+fathmm_dbpassword: <fill in>
+
+# Copying Setting
+copy_dir: <fill in>
+owner: <fill in>
+group: <fill in>
+
+# Mongo Project Collection Settings 
+projects_file_name: <fill in>

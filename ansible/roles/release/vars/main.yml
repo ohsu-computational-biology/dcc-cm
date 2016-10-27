@@ -11,7 +11,3 @@ release_dist_name: dcc-release-client
 release_dist_fullname: "{{ release_dist_name }}-{{ release_dist_version }}"
 release_dist_filename: "{{ release_dist_fullname }}-SNAPSHOT.jar"
 release_dist_url: "{{ artifactory_release_url }}/{{ artifactory_dcc_path }}/{{ release_dist_name }}/{{ release_dist_version }}/{{ release_dist_filename }}"
-
-copy_dir: <fill in>
-owner: <fill in>
-group: <fill in>
