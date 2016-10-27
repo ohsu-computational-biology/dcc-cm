@@ -8,10 +8,21 @@
     - libpq-dev
     - python-psycopg2
 
-- name: Check if Fathmm dataset is already downloaded
-  command: test -e {{ etl_home }}/{{ fathmm_dataset_name }}
-  register: find_result
-  ignore_errors: yes
+- name: Ensure directories
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ data_dir }}"
 
-- include: download_fathmm.yml
-  when: find_result != 0
+- name: Download Fathmm dataset
+  get_url: url="{{ fathmm_dataset_url }}"
+           dest="{{ data_dir }}/{{ fathmm_dataset_name }}"
+           mode=0444
+  sudo: yes
+
+#- name: Check if Fathmm dataset is already downloaded
+#  command: test -e {{ etl_home }}/{{ fathmm_dataset_name }}
+#  register: find_result
+#  ignore_errors: yes
+#
+#- include: download_fathmm.yml
+#  when: find_result != 0
