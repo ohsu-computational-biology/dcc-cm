@@ -29,9 +29,9 @@ download_stage: "PRODUCTION"
 download_release_name: "{{ release_name }}"
 
 
-database_url: "{{ postgresql_portal_uri }}"
+# database_url: "{{ postgresql_portal_uri }}"
 
-web_base_url: "{{ reverse_proxy_url }}"
+# web_base_url: "{{ reverse_proxy_url }}"
 
 icgc_cgp_url: "{{ icgc_url }}/ud_oauth/1/search"
 icgc_short_url: "{{ icgc_url }}/short/api/1/shorten"
