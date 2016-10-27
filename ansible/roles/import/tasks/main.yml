@@ -27,7 +27,7 @@
 
 - name: Copy over personal application.yml
   copy: src="{{ copy_dir }}/{{ application_file_name }}"
-        dest="{{ install_dir }}/{{ import_home }}/conf/{{ application_file_name }}"
+        dest="{{ import_home }}/conf/{{ application_file_name }}"
         owner="{{ owner }}"
         group="{{ group }}"
         mode=0644
