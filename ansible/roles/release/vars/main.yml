@@ -14,4 +14,4 @@ release_dist_url: "{{ artifactory_release_url }}/{{ artifactory_dcc_path }}/{{ r
 
 copy_dir: <fill in>
 owner: <fill in>
-group:<fill in>
+group: <fill in>
