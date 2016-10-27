@@ -31,7 +31,7 @@
     - "{{ portal_conf }}"
 
 - name: Copy over portal configuraiton file
-  template: src="settings.yml" dest="{{ portal_conf }}/application.yml" mode=644 force=yes
+  template: src="ohsu-settings.yml" dest="{{ portal_conf }}/application.yml" mode=644 force=yes
 
 - name: Copy over portal h2 schema file
   template: src="schema.sql" dest="{{ portal_conf }}/schema.sql" mode=644 force=yes
