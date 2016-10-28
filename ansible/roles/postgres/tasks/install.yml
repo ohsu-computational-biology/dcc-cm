@@ -29,4 +29,4 @@
 - name: Restart postgres server
   service: name=postgresql 
            state=restarted
-  when: postgresql_conf|changed or pg_hba_conf|changed
+  when: pg_hba_conf|changed
