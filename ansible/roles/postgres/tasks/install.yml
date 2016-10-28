@@ -14,11 +14,11 @@
 - name: make sure postgres is enabled and started
   service: name=postgresql enabled=yes state=started
 
-- name: Install PostgreSQL config file
-  copy: src=postgresql.conf 
-        dest=/etc/postgresql/{{ postgresql_version }}/main/postgresql.conf 
-        force=yes
-  register: postgresql_conf
+#- name: Install PostgreSQL config file
+#  copy: src=postgresql.conf 
+#        dest=/etc/postgresql/{{ postgresql_version }}/main/postgresql.conf 
+#        force=yes
+#  register: postgresql_conf
 
 - name: Install PostgreSQL hba file
   copy: src=pg_hba.conf 

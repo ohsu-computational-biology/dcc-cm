@@ -1,4 +1,4 @@
-# Copyright 2015(c) The Ontario Institute for Cancer Research. All rights reserved.
+#Copyright 2015(c) The Ontario Institute for Cancer Research. All rights reserved.
 
 - name: Install development header files
   apt:  pkg={{ item }}
@@ -10,10 +10,10 @@
     - python-pip
     - python-psycopg2
 
-- name: Add repository key
-  apt_key: data="{{ lookup('file', 'ACCC4CF8.asc') }}"  
-           state=present
+#- name: Add repository key
+#  apt_key: data="{{ lookup('file', 'ACCC4CF8.asc') }}"  
+#           state=present
 
-- name: Add PostgreSQL repository
-  apt_repository: repo="{{ postgresql_repo }}" 
-                  state=present
+#- name: Add PostgreSQL repository
+#  apt_repository: repo="{{ postgresql_repo }}" 
+#                  state=present
