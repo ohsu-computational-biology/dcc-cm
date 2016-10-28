@@ -24,5 +24,10 @@
   register: find_result
   ignore_errors: yes
 
+- name: Check if dataset patch exists
+  command: test -e {{ etl_home }}/{{ fathmm_dataset_patch }}
+  register: find_result_patch
+  ignore_errors: yes
+
 - include: extract_fathmm.yml
-  when: find_result != 0
+  when: find_result != 0 or find_result_patch != 0
