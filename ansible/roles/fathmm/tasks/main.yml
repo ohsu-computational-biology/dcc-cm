@@ -7,3 +7,4 @@
 - name: Upload dataset to postgres
   command: "psql fathmm < {{ etl_home }}/{{ fathmm_dataset }}"
   become: yes
+  become_user: postgres
