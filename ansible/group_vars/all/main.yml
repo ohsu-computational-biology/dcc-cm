@@ -31,7 +31,7 @@ dictionary_version: 0.11c
 elasticsearch_version: 1.4.4
 shiro_version: 1.2.1
 mongodb_version: 2.4.1
-postgresql_version: 9.2
+postgresql_version: 9.3
 
 # DCC Components, typically retrieved from Artifactory
 annotator_version: 3.8.27-SNAPSHOT
