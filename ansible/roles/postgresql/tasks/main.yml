@@ -30,4 +30,4 @@
 #  ignore_errors: yes
 
 - include: extract_fathmm.yml
-  when: find_result != 0
+  when: find_result.rc != 0
