@@ -20,12 +20,12 @@
   become: yes
 
 - name: Check if Fathmm dataset is already extracted
-  command: test -e {{ etl_home }}/{{ fathmm_dataset }}
+  command: test -e {{ data_dir }}/{{ fathmm_dataset }}
   register: find_result
   ignore_errors: yes
 
 - name: Check if dataset patch exists
-  command: test -e {{ etl_home }}/{{ fathmm_dataset_patch }}
+  command: test -e {{ data_dir }}/{{ fathmm_dataset_patch }}
   register: find_result_patch
   ignore_errors: yes
 
