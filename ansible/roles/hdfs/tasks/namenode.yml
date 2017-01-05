@@ -16,7 +16,7 @@
     regexp: ^export JAVA_HOME
     line: export JAVA_HOME={{ jdk_home }}
 
-- name: preconfigure Hadoop
+- name: Preconfigure Hadoop
   template: src=hadoop-env.sh.j2 dest={{ hdfs_conf_dir }}/hadoop-env.sh
 
 - name: Configure Hadoop HDFS NameNode
